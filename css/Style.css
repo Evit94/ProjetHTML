@@ -1,3 +1,6 @@
-body {
-    background-color: rgb(215, 250, 220);
+h1 {
+    color: blue;
+    font-size: 24px;
+    text-align: center;
+    border: 2px solid red;
 }
