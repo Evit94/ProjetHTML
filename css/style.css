@@ -1,7 +1,7 @@
-h1  {
+.bandeau  h1 {
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(10px);
-    padding: 20px;
+    padding: 10px;
     border: 1px solid rgba(255,255,255,0.3);
     border-radius: 15px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -9,9 +9,24 @@ h1  {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    text-align: center;
-    font-size: 50px;
+    text-align:center;
+    font-size: 40px;
     color:#4B8F8F;
+}
+.bandeau {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(#ffd700, #ffaa00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-align:center;
+    font-size: 30px;
+    color:#0bc5c5;
 }
 
 
