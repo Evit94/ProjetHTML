@@ -11,7 +11,8 @@
     color: transparent;
     text-align:center;
     font-size: 40px;
-    color:#4B8F8F;
+    color:#0bc5c5;
+    font-family:'Aptos Cn', sans-serif; 
 }
 .bandeau {
     background: rgba(255, 255, 255, 0.2);
@@ -29,7 +30,32 @@
     color:#0bc5c5;
 }
 
+.bandeau .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px; 
+}
 
+.bandeau .buttons button {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: rgb(188, 189, 207);
+    padding: 10px 200px;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(px);
+    -webkit-backdrop-filter: blur(5px);
+    min-width: 120px; 
+}
+
+.bandeau .buttons button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
 
 body {
     background-image: url("../images/premium-header-9772f2b7.jpg");
