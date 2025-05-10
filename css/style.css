@@ -12,7 +12,7 @@
     text-align:center;
     font-size: 40px;
     color:#0bc5c5;
-    font-family:'Aptos Cn', sans-serif; 
+    font-family:'Arial', sans-serif; 
 }
 .bandeau {
     background: rgba(255, 255, 255, 0.2);
@@ -41,14 +41,14 @@
     background: rgba(255, 255, 255, 0.15);
     border: 1px solid rgba(255, 255, 255, 0.4);
     color: rgb(188, 189, 207);
-    padding: 10px 200px;
+    padding: 10px 20px;
     border-radius: 50px;
     font-size: 16px;
     cursor: pointer;
     transition: all 0.3s ease;
     backdrop-filter: blur(px);
     -webkit-backdrop-filter: blur(5px);
-    min-width: 120px; 
+    min-width: 450px; 
 }
 
 .bandeau .buttons button:hover {
