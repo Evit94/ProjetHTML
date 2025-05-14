@@ -48,7 +48,7 @@
     transition: all 0.3s ease;
     backdrop-filter: blur(px);
     -webkit-backdrop-filter: blur(5px);
-    min-width: 450px; 
+    min-width: 30%; 
 }
 
 .bandeau .buttons button:hover {
