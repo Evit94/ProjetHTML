@@ -1,66 +1,109 @@
-.bandeau  h1 {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 10px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(#ffd700, #ffaa00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-align:center;
-    font-size: 40px;
-    color:#0bc5c5;
-    font-family:'Arial', sans-serif; 
-}
-.bandeau {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    padding: 10px;
-    border: 1px solid rgba(255,255,255,0.3);
-    border-radius: 15px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    background: linear-gradient(#ffd700, #ffaa00);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
+h1 {
+    background: transparent;
+    padding: 10px;  
     text-align:center;
     font-size: 30px;
-    color:#0bc5c5;
+    color:#ffffff;
+    margin-top: -10px;
 }
 
-.bandeau .buttons {
-    display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-top: 15px; 
+.bandeau {
+    text-align: center;
+    padding: 10px;
+    flex:inline;
 }
 
-.bandeau .buttons button {
-    background: rgba(255, 255, 255, 0.15);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    color: rgb(188, 189, 207);
-    padding: 10px 20px;
-    border-radius: 50px;
-    font-size: 16px;
+#Accueil, #Informations, #Contact {
+    background: transparent;
+    border: 2px solid rgb(151, 147, 147); 
+    color: white;
+    padding: 6px 12px;
+    font-size: 14px; 
     cursor: pointer;
     transition: all 0.3s ease;
-    backdrop-filter: blur(px);
-    -webkit-backdrop-filter: blur(5px);
-    min-width: 30%; 
+    border-radius: 0;
+    margin: 5px; 
 }
 
-.bandeau .buttons button:hover {
-    background: rgba(255, 255, 255, 0.3);
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding: 20px 40px;
+}
+
+.left-button, .right-button {
+    display: flex;
+    gap: 10px;
+}
+
+#Accueil{
+    margin-right:5px;
+    margin-left:50px;
+}
+#Accueil:hover, #Informations:hover, #Contact:hover {
+    background: white;
+    color: black; 
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 body {
-    background-image: url("../images/premium-header-9772f2b7.jpg");
+    
     background-size: cover;
     background-position: center;
     height: 100vh;
     margin: 5px;
 }
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: -1;
+    object-fit: cover;
+}
+.titre {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 30px;
+    color: white;
+    margin: 0;
+    white-space: nowrap;
+    pointer-events: none; 
+}
+* {
+    font-family:'Optima', 'Cinzel', serif;
+}
+main.content {
+    margin-top: 60vh; 
+    padding: 4vh 8vw;
+    background-color: white;
+    color: #222;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+}
+
+
+.texte {
+    margin-bottom: 40px;
+    padding: 20px;
+    border-left: 4px solid #888;
+    background: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+}
+
+.texte h2 {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+
