@@ -10,19 +10,35 @@
 <body>
     <header>
         <div class="bandeau">
-        
             <div class="navbar">
+
+                <button class="menu" id="openSidebar" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <div class="left-button">
                     <button id="Accueil">Accueil</button>
                     <button id ="Informations">Informations</button>
                 </div>
                 <h1 class="titre">La thérapie de la musique</h1>
                 <div class="right-button">
+                    <button id="Localisation">Localisation</button>
                     <button id="Contact">Contact</button>
                 </div>
-                
             </div>
         </div>
+
+        <nav id="sidebarMenu" class="sidebar">
+            <button id="closeSidebar" class="close-btn" aria-label="Fermer le menu">&times;</button>
+            <ul>
+                <li><a href="Accueil.html">Accueil</a></li>
+                <li><a href="#">Légende</a></li>
+                <li><a href="#">Informations</a></li>
+                <li><a href="#">Localisation</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
         <iframe id="video-background"
         src="https://www.youtube.com/embed/dYCUM2jIVuY?autoplay=1&mute=1&controls=0&loop=1&playlist=dYCUM2jIVuY&start=0&end=40&showinfo=0&modestbranding=1"
         frameborder="0"
@@ -56,5 +72,6 @@
         
 
     <footer></footer>
+    <script src="../js/script.js"></script>
 </body>
 </html>

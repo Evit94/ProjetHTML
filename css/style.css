@@ -13,7 +13,7 @@ h1 {
     flex:inline;
 }
 
-#Accueil, #Informations, #Contact {
+#Accueil, #Informations, #Contact, #Localisation {
     background: transparent;
     border: 2px solid rgb(151, 147, 147); 
     color: white;
@@ -42,7 +42,7 @@ h1 {
     margin-right:5px;
     margin-left:50px;
 }
-#Accueil:hover, #Informations:hover, #Contact:hover {
+#Accueil:hover, #Informations:hover, #Contact:hover, #Localisation:hover {
     background: white;
     color: black; 
     transform: translateY(-2px);
@@ -105,5 +105,94 @@ main.content {
     color: #333;
     font-weight: bold;
 }
+
+.menu {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    z-index: 1002;
+    gap: 4px;
+    padding: 0;
+}
+.menu span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: rgb(151, 147, 147);
+    margin: 2px 0;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 250px;
+    height: 100%;
+    background: #222;
+    color: white;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.2);
+    padding-top: 30px;
+    transition: left 0.3s;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar.active {
+    left: 0;
+}
+.sidebar .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 40px 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.sidebar ul li a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    border: 2px solid rgb(151, 147, 147);
+    background: transparent;
+    border-radius: 0;
+    font-size: 16px;
+    transition: background 0.2s, color 0.2s;
+}
+.sidebar ul li a:hover {
+    background: white;
+    color: #222;
+}
+
+
+.navbar {
+    position: relative;
+
+}
+
 
 
