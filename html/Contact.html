@@ -4,22 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header>
-        <nav>
+        <div class="bandeau">
+            <div class="navbar">
+                <button class="menu" id="openSidebar" aria-label="Ouvrir le menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="left-button">
+                    <button id="Accueil">Accueil</button>
+                    <button id ="Informations">Informations</button>
+                </div>
+                <h1 class="titre">La thérapie de la musique</h1>
+                <div class="right-button">
+                    <button id="Localisation">Localisation</button>
+                    <button id="Contact">Contact</button>
+                </div>
+            </div>
+        </div>
+
+        <nav id="sidebarMenu" class="sidebar">
+            <button id="closeSidebar" class="close-btn" aria-label="Fermer le menu">&times;</button>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Accueil.html">Accueil</a></li>
+                <li><a href="#">Informations</a></li>
+                <li><a href="#">Localisation</a></li>
+                <li class="sidebar-bottom"><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
     </header>
+    <section id="contact" class="contact-section">
+    <h2>Contactez-nous</h2>
+    <form class="contact-form">
+        <div class="form-row">
+            <select name="civilite" required>
+                <option value="" disabled selected>Civilité</option>
+                <option value="Mme">Madame</option>
+                <option value="M.">Monsieur</option>
+            </select>
+            <input type="text" name="nom" placeholder="Nom" required>
+        </div>
+        <div class="form-row">
+            <input type="text" name="prenom" placeholder="Prénom" required>
+            <input type="email" name="email" placeholder="E-mail *" required>
+        </div>
+        <div class="form-row">
+            <input type="text" name="codepostal" placeholder="Code Postal *" required>
+            <input type="text" name="ville" placeholder="Ville">
+        </div>
+        <div class="form-row">
+            <input type="text" name="pays" placeholder="Pays *" required>
+            <input type="tel" name="tel" placeholder="Téléphone">
+        </div>
+        <div class="form-row">
+            <select name="sujet" required>
+                <option value="subject" disabled selected>Sujet</option>
+                <option value="info">Demande d'information</option>
+                <option value="avis">Avis / retour</option>
+            </select>
+            <input type="text" name="message" placeholder="Votre message">
+        </div>
+
+        <button type="submit" class="submit-btn">Envoyer</button>
+    </form>
+</section>
     <h1>Contact</h1>
     <p>Contact us at:</p>
-    
+    <ul>
+        <li>eric.eung@efrei.net</li>
+        <li>leyan.very@efrei.net</li>
+    </ul>
     <footer>
-        
+        © 2025 Leyan et Eric
     </footer>
+        <script src="../js/script.js"></script>
 </body>
 </html>

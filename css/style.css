@@ -79,8 +79,9 @@ body {
     font-family:'Optima', 'Cinzel', serif;
 }
 main.content {
-    margin-top: 60vh; 
+    margin-top: 80vh; 
     padding: 4vh 8vw;
+    
     background-color: white;
     color: #222;
     font-size: 1.1rem;
@@ -91,12 +92,29 @@ main.content {
 
 
 .texte {
-    margin-bottom: 40px;
-    padding: 20px;
+    margin-bottom: 60px;
+    padding: 32px 20px;
     border-left: 4px solid #888;
+    border-right: none;
     background: #f9f9f9;
     border-radius: 8px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.05);
+    width: 78%;
+}
+
+.texte-centre-droite {
+    border-left: none;
+    border-right: 4px solid #888 ;
+}
+
+.texte-droite {
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.texte-gauche {
+    margin-left: 0;
+    margin-right: auto;
 }
 
 .texte h2 {
@@ -139,13 +157,15 @@ main.content {
 .sidebar {
     position: fixed;
     top: 0;
-    left: -260px;
+    left: -100%; 
     width: 250px;
     height: 100%;
     background: #222;
     color: white;
     box-shadow: 2px 0 8px rgba(0,0,0,0.2);
     padding-top: 30px;
+    padding-left: 16px;
+    padding-right: 16px;
     transition: left 0.3s;
     z-index: 2000;
     display: flex;
@@ -171,6 +191,9 @@ main.content {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    height: calc(100vh - 100px);
+    min-height: 0;
+    flex: 1;
 }
 .sidebar ul li a {
     display: block;
@@ -182,10 +205,12 @@ main.content {
     border-radius: 0;
     font-size: 16px;
     transition: background 0.2s, color 0.2s;
+    margin-left: 4px;
+    margin-right: 4px;
 }
-.sidebar ul li a:hover {
-    background: white;
-    color: #222;
+.sidebar ul .sidebar-bottom {
+    margin-top: auto;
+    margin-bottom: 48px;
 }
 
 
@@ -194,5 +219,118 @@ main.content {
 
 }
 
+footer{
+    background-color: white;
+}
+
+.contact-section {
+    padding: 60px 10vw;
+    background-color: #f2f2f2;
+    font-family: 'Optima', 'Cinzel', serif;
+    color: #222;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.contact-form {
+    max-width: 900px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.form-row input,
+.form-row select {
+    flex: 1;
+    padding: 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    background: white;
+    border-radius: 4px;
+}
+
+.form-checkbox {
+    font-size: 0.95rem;
+    color: #333;
+}
+
+.form-checkbox a {
+    text-decoration: underline;
+    color: #000;
+}
+
+.submit-btn {
+    background-color: #999;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border: none;
+    margin-top: 10px;
+    align-self: center;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.submit-btn:hover {
+    background-color: #777;
+}
+.form-row select[name="civilite"] option[disabled] {
+    color: #888;
+}
+.section-avec-image-gauche {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    justify-content: flex-start;
+    padding-left: 8px;
+}
+
+.image-gauche {
+    max-width: 280px;
+    width: 100%;
+    height: auto;
+    margin-top: -30px;
+    margin-right: 80px;
+    margin-left: -70px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
+    object-fit: cover;
+}
+
+.section-avec-image .texte-droite {
+    margin-left: 0;
+    width: 100%;
+}
+
+.section-avec-image-droite {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 120px;
+}
+.section-avec-image-droite .texte-gauche {
+    flex: 1;
+    margin: 0;
+}
+.image-droite {
+    max-width: 240px;
+    margin-left: 80px;
+    margin-right: -80px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
 
 
