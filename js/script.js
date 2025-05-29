@@ -165,7 +165,8 @@ if (document.getElementById('map')) {
     { name: "Monoprix Nation", address: "28 Cours de Vincennes, 75012 Paris", lat: 48.848900, lng: 2.398900 },
     { name: "Opéra Garnier", address: "Place de l'Opéra, 75009 Paris", lat: 48.870697, lng: 2.331640 },
     { name: "Piano International", address: "Place de la République, 75010 Paris", lat: 48.867430, lng: 2.363180 },
-    { name: "Monoprix Beaugrenelle", address: "7 Rue Linois, 75015 Paris", lat: 48.849900, lng: 2.282900 }
+    { name: "Monoprix Beaugrenelle", address: "7 Rue Linois, 75015 Paris", lat: 48.849900, lng: 2.282900 },
+    { name: "Sacré-Cœur", address: "35 Rue du Chevalier de la Barre, 75018 Paris", lat: 48.886704, lng: 2.343104 }
   ];
   const map = L.map('map').setView([48.8566, 2.3522], 12);
   L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
