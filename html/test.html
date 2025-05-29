@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Carte des pianos à Paris</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <header>
+    <div class="bandeau">
+      <div class="navbar">
+        <button class="menu" id="openSidebar" aria-label="Ouvrir le menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="left-button">
+          <button id="Accueil2">Accueil</button>
+          <button id="Decouvrir2">Découvrir</button>
+        </div>
+        <h1 class="titre">Carte des pianos en libre accès à Paris</h1>
+        <div class="right-button">
+          <button id="Localisation2">Localisation</button>
+          <button id="Contact2">Contact</button>
+        </div>
+      </div>
+    </div>
+    <nav id="sidebarMenu" class="sidebar">
+      <button id="closeSidebar" class="close-btn" aria-label="Fermer le menu">&times;</button>
+      <ul>
+        <li><a href="Accueil.html">Accueil</a></li>
+        <li><a href="Decouvrir.html">Découvrir</a></li>
+        <li><a href="#">Localisation</a></li>
+        <li class="sidebar-bottom"><a href="Contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <form class="search-bar" onsubmit="event.preventDefault(); searchPiano();">
+    <input type="text" id="searchInput" placeholder="Rechercher un piano...">
+    <button type="submit">Rechercher</button>
+  </form>
+  <div id="map"></div>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="../js/script.js"></script>
+</body>
+</html>

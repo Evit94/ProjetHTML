@@ -1,7 +1,3 @@
-
- 
-
-
 h1 {
     background: transparent;
     padding: 10px;  
@@ -17,7 +13,7 @@ h1 {
     flex:inline;
 }
 
-#Accueil, #Informations, #Contact, #Localisation {
+#Accueil, #Decouvrir, #Contact, #Localisation {
     background: transparent;
     border: 2px solid rgb(151, 147, 147); 
     color: white;
@@ -46,7 +42,7 @@ h1 {
     margin-right:5px;
     margin-left:50px;
 }
-#Accueil:hover, #Informations:hover, #Contact:hover, #Localisation:hover {
+#Accueil:hover, #Decouvrir:hover, #Contact:hover, #Localisation:hover {
     background: white;
     color: black; 
     transform: translateY(-2px);
@@ -74,11 +70,19 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 30px;
-    color: white;
+    color: #111;
     margin: 0;
     white-space: nowrap;
-    pointer-events: none; 
+    pointer-events: none;
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
+
+body.accueil .titre {
+    color: #fff;
+}
+
 * {
     font-family:'Optima', 'Cinzel', serif;
 }
@@ -217,6 +221,32 @@ main.content {
     margin-bottom: 48px;
 }
 
+.sidebar-section-title {
+    font-size: 1.08em;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin: 18px 0 6px 0;
+    text-transform: uppercase;
+    color: #fff;
+    padding-left: 4px;
+}
+.sidebar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.sidebar-list li {
+    margin: 0;
+    padding: 0;
+}
+.sidebar-separator {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 0 0 0 0;
+    width: 90%;
+    align-self: center;
+    background: none;
+}
 
 .navbar {
     position: relative;
@@ -367,7 +397,7 @@ footer{
     font-size: 1.05em;
 }
 
-#Accueil2, #Informations2, #Contact2, #Localisation2 {
+#Accueil2, #Decouvrir2, #Contact2, #Localisation2 {
     background: transparent;
     border: 2px solid rgb(151, 147, 147); 
     color: black;
@@ -382,8 +412,227 @@ footer{
     margin-right:5px;
     margin-left:50px;
 }
-#Accueil2:hover, #Informations2:hover, #Contact2:hover, #Localisation2:hover {
+#Accueil2:hover, #Decouvrir2:hover, #Contact2:hover, #Localisation2:hover {
     background: grey;
     color: white; 
     transform: translateY(-2px);
+}
+
+.quiz-decor {
+    position: relative;
+    width: 180px;
+    min-width: 120px;
+    height: 700px;
+    margin-top: 40px;
+    background: linear-gradient(135deg, #e0d6c3 40%, #b6a07a 100%);
+    border-radius: 60px;
+    box-shadow: 0 8px 32px rgba(80,60,30,0.10), 0 1.5px 0 #b6a07a inset;
+    opacity: 0.9;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    filter: brightness(0.95);
+}
+.decor-left {
+    margin-right: 32px;
+    background: url('../images/Steinway_Onstage_at_Bass_Concert_Hall.jpg') center/cover no-repeat, linear-gradient(135deg, #e0d6c3 40%, #b6a07a 100%);
+    filter: grayscale(0.15) brightness(0.92);
+    border-top-left-radius: 80px 200px;
+    border-bottom-left-radius: 80px 200px;
+}
+.decor-right {
+    margin-left: 32px;
+    background: url('../images/kawai-piano.jpg') center/cover no-repeat, linear-gradient(135deg, #e0d6c3 40%, #b6a07a 100%);
+    filter: grayscale(0.15) brightness(0.92);
+    border-top-right-radius: 80px 200px;
+    border-bottom-right-radius: 80px 200px;
+}
+.quiz-decor::after {
+    content: "\266B  \266A  \266C  \2669";
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%) rotate(-15deg);
+    font-size: 3.2em;
+    color: rgba(60,40,20,0.13);
+    pointer-events: none;
+    letter-spacing: 0.2em;
+    white-space: pre;
+    user-select: none;
+    font-family: 'Cinzel', serif;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    z-index: 2;
+}
+.quiz-section {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 40px;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(90deg, rgba(230,225,215,0.7) 0%, rgba(255,255,255,0.95) 50%, rgba(230,225,215,0.7) 100%);
+    border-radius: 40px;
+    box-shadow: 0 8px 32px rgba(80,60,30,0.07), 0 1.5px 0 #b6a07a1a inset;
+    padding: 32px 0;
+}
+.quiz-main-content {
+    flex: 1;
+    max-width: 700px;
+    z-index: 2;
+}
+.quiz-margin-top {
+    margin: 30px auto 20px auto;
+}
+.quiz-margin-bottom {
+    margin: 0 auto 40px auto;
+}
+.quiz-section > div {
+    z-index: 2;
+}
+
+.quiz-question {
+    margin-bottom: 28px;
+}
+.quiz-question label {
+    display: block;
+    margin-bottom: 4px;
+    cursor: pointer;
+}
+.submit-btn {
+    margin-top: 18px;
+    padding: 8px 24px;
+    background: #222;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+.submit-btn:hover {
+    background: #444;
+}
+#quiz-result {
+    display: none;
+    text-align: center;
+    font-size: 1.3em;
+    margin-top: 30px;
+}
+
+#map {
+    width: 90vw;
+    height: 70vh;
+    max-width: 900px;
+    margin: 40px auto 0 auto;
+    border-radius: 18px;
+    box-shadow: 0 2px 16px #bbb;
+}
+.leaflet-popup-content {
+    font-size: 1.1em;
+}
+.search-bar {
+    margin: 24px auto 0 auto;
+    max-width: 400px;
+    display: flex;
+}
+.search-bar input {
+    flex: 1;
+    padding: 8px 12px;
+    font-size: 1em;
+    border: 1px solid #aaa;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+}
+.search-bar button {
+    padding: 8px 18px;
+    font-size: 1em;
+    border: 1px solid #aaa;
+    border-left: none;
+    background: #222;
+    color: #fff;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+.search-bar button:hover {
+    background: #444;
+}
+
+@media (max-width: 900px) {
+    .header-decouvrir {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 0 16px 0;
+    }
+    .header-decouvrir .site-title {
+        margin: 0 0 12px 0;
+        font-size: 1.4rem;
+        text-align: center;
+    }
+    .header-decouvrir .nav-btns {
+        justify-content: center;
+        width: 100%;
+    }
+    .quiz-section {
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(180deg, rgba(230,225,215,0.7) 0%, rgba(255,255,255,0.95) 60%, rgba(230,225,215,0.7) 100%);
+        border-radius: 24px;
+        padding: 16px 0;
+    }
+}
+
+@media (max-width: 1100px) {
+    .quiz-decor { width: 100px; min-width: 60px; height: 300px; }
+}
+
+.footer-contact {
+    background: #fff;
+    padding: 32px 0 18px 0;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 0;
+}
+.footer-contact-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: #222;
+}
+.footer-contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+.footer-contact-list li {
+    font-size: 1.05em;
+    color: #333;
+}
+.footer-contact-list a {
+    color: #222;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.footer-contact-list a:hover {
+    color: #b6a07a;
+    text-decoration: underline;
+}
+.footer-icon {
+    margin-right: 6px;
+    font-size: 1.1em;
+    vertical-align: middle;
+}
+.footer-copyright {
+    font-size: 0.95em;
+    color: #888;
+    margin-top: 8px;
 }

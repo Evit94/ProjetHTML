@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -17,9 +18,9 @@
                 </button>
                 <div class="left-button">
                     <button id="Accueil2">Accueil</button>
-                    <button id ="Informations2">Informations</button>
+                    <button id="Decouvrir2">Découvrir</button>
                 </div>
-                <h1 class="titre">La thérapie de la musique</h1>
+                <h1 class="titre">Contact</h1>
                 <div class="right-button">
                     <button id="Localisation2">Localisation</button>
                     <button id="Contact2">Contact</button>
@@ -29,10 +30,14 @@
 
         <nav id="sidebarMenu" class="sidebar">
             <button id="closeSidebar" class="close-btn" aria-label="Fermer le menu">&times;</button>
-            <ul>
+            <div class="sidebar-section-title">NAVIGATION</div>
+            <ul class="sidebar-list">
                 <li><a href="Accueil.html">Accueil</a></li>
-                <li><a href="#">Informations</a></li>
-                <li><a href="#">Localisation</a></li>
+                <hr class="sidebar-separator">
+                <li><a href="Decouvrir.html">Découvrir</a></li>
+                <hr class="sidebar-separator">
+                <li><a href="localisation.html">Localisation</a></li>
+                <hr class="sidebar-separator">
                 <li class="sidebar-bottom"><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -72,14 +77,15 @@
         <button type="submit" class="submit-btn">Envoyer</button>
     </form>
 </section>
-    <h1>Contact</h1>
-    <p>Contact us at:</p>
-    <ul>
-        <li>eric.eung@efrei.net</li>
-        <li>leyan.very@efrei.net</li>
-    </ul>
     <footer>
-        © 2025 Leyan et Eric
+        <div class="footer-contact">
+            <div class="footer-contact-title">Contactez-nous :</div>
+            <ul class="footer-contact-list">
+                <li><span class="footer-icon">📧</span> <a href="mailto:eric.eung@efrei.net">eric.eung@efrei.net</a></li>
+                <li><span class="footer-icon">📧</span> <a href="mailto:leyan.very@efrei.net">leyan.very@efrei.net</a></li>
+            </ul>
+            <div class="footer-copyright">© 2025 Leyan et Eric</div>
+        </div>
     </footer>
         <script src="../js/script.js"></script>
 </body>
