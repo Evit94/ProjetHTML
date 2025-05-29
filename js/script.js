@@ -1,5 +1,5 @@
-document.getElementById('openSidebar').onclick = function(e) {
-            e.stopPropagation();
+document.getElementById('openSidebar').onclick = function(ev) {
+                ev.stopPropagation();
             document.getElementById('sidebarMenu').classList.add('active');
         };
         document.getElementById('closeSidebar').onclick = function() {
@@ -12,14 +12,14 @@ document.getElementById('openSidebar').onclick = function(e) {
                 sidebar.classList.remove('active');
             }
         });
-function goTo(page) {
+function aller(page) {
     window.location.href = page;
 }
 
 
 var btnAccueil = document.getElementById('Accueil');
 if (btnAccueil) {
-    btnAccueil.onclick = function() { goTo('Accueil.html'); };
+    btnAccueil.onclick = function() { aller('Accueil.html'); };
 }
 
 var btnInfos = document.getElementById('Informations');
@@ -34,5 +34,26 @@ if (btnLoc) {
 
 var btnContact = document.getElementById('Contact');
 if (btnContact) {
-    btnContact.onclick = function() { goTo('Contact.html'); };
+    btnContact.onclick = function() { aller('Contact.html'); };
+}
+
+
+var btnAccueil = document.getElementById('Accueil2');
+if (btnAccueil) {
+    btnAccueil.onclick = function() { aller('Accueil.html'); };
+}
+
+var btnInfos = document.getElementById('Informations2');
+if (btnInfos) {
+    btnInfos.onclick = function() { alert('Page Informations à venir !'); };
+}
+
+var btnLoc = document.getElementById('Localisation2');
+if (btnLoc) {
+    btnLoc.onclick = function() { alert('Page Localisation à venir !'); };
+}
+
+var btnContact = document.getElementById('Contact2');
+if (btnContact) {
+    btnContact.onclick = function() { aller('Contact.html'); };
 }

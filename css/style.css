@@ -1,3 +1,7 @@
+
+ 
+
+
 h1 {
     background: transparent;
     padding: 10px;  
@@ -304,7 +308,7 @@ footer{
     height: auto;
     margin-top: -30px;
     margin-right: 80px;
-    margin-left: -70px;
+    margin-left: -65px;
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0,0,0,0.08);
     object-fit: cover;
@@ -326,12 +330,60 @@ footer{
     margin: 0;
 }
 .image-droite {
-    max-width: 240px;
+    max-width: 280px;
     margin-left: 80px;
-    margin-right: -80px;
+    margin-right: -65px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
+.site-presentation {
+    margin: 50px auto;
+    max-width: 900px;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Optima', 'Cinzel', serif;
+}
 
+.site-presentation h2 {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
 
-test
+.site-presentation p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+.site-presentation ul {
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.site-presentation li {
+    margin-bottom: 10px;
+    font-size: 1.05em;
+}
+
+#Accueil2, #Informations2, #Contact2, #Localisation2 {
+    background: transparent;
+    border: 2px solid rgb(151, 147, 147); 
+    color: black;
+    padding: 6px 12px;
+    font-size: 14px; 
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 0;
+    margin: 5px; 
+}
+#Accueil2{
+    margin-right:5px;
+    margin-left:50px;
+}
+#Accueil2:hover, #Informations2:hover, #Contact2:hover, #Localisation2:hover {
+    background: grey;
+    color: white; 
+    transform: translateY(-2px);
+}
