@@ -343,6 +343,14 @@ function setupMusicGame() {
 document.addEventListener('DOMContentLoaded', setupMusicGame);
 // --- Jeu : Devine le nom de la musique ---
 document.addEventListener('DOMContentLoaded', function() {
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  }
+
   const musicQuiz = [
     {
       audio: "../audio/Nocturne in E flat major, Op. 9 no. 2.mp3",
@@ -398,6 +406,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   let currentMusic = 0;
   let score = 0;
+  let shuffledAnswers = [];
 
   const audio = document.getElementById('music-audio');
   const form = document.getElementById('guess-music-form');
@@ -408,8 +417,9 @@ document.addEventListener('DOMContentLoaded', function() {
     audio.style.display = '';
     audio.querySelector('source').src = musicQuiz[index].audio;
     audio.load();
+    shuffledAnswers[index] = shuffleArray([...musicQuiz[index].answers]);
     form.innerHTML = '';
-    musicQuiz[index].answers.forEach(ans => {
+    shuffledAnswers[index].forEach(ans => {
       const btn = document.createElement('button');
       btn.type = "button";
       btn.className = "guess-btn";
@@ -434,8 +444,8 @@ document.addEventListener('DOMContentLoaded', function() {
       resultDiv.style.color = "green";
       score++;
     } else {
-      resultDiv.textContent = "Mauvaise réponse. La bonne réponse était : " +
-        musicQuiz[currentMusic].answers.find(a => a.value === correct).text;
+      const correctText = shuffledAnswers[currentMusic].find(a => a.value === correct).text;
+      resultDiv.textContent = "Mauvaise réponse. La bonne réponse était : " + correctText;
       resultDiv.style.color = "red";
     }
     nextBtn.style.display = 'inline-block';

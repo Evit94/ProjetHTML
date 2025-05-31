@@ -588,7 +588,7 @@ footer{
     border: none;
     border-radius: 6px;
     padding: 10px 24px;
-    font-size: 0.98em; /* taille réduite */
+    font-size: 0.98em; 
     margin: 4px 0;
     cursor: pointer;
     transition: background 0.2s, color 0.2s, transform 0.15s;
@@ -616,7 +616,7 @@ footer{
     color: #fff;
     border: none;
     border-radius: 6px;
-    font-size: 0.98em; /* taille réduite */
+    font-size: 0.98em; 
     padding: 10px 24px;
     cursor: pointer;
     transition: background 0.2s;
@@ -636,7 +636,7 @@ footer{
     min-height: 1.5em;
 }
 
-/* Responsive pour le jeu musique */
+
 @media (max-width: 700px) {
     #guess-music-section {
         max-width: 98vw;
