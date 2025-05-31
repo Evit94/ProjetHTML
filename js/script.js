@@ -341,3 +341,134 @@ function setupMusicGame() {
   };
 }
 document.addEventListener('DOMContentLoaded', setupMusicGame);
+// --- Jeu : Devine le nom de la musique ---
+document.addEventListener('DOMContentLoaded', function() {
+  const musicQuiz = [
+    {
+      audio: "../audio/Nocturne in E flat major, Op. 9 no. 2.mp3",
+      answers: [
+        { text: "Nocturne op. 9 no. 2", value: "Nocturne" },
+        { text: "Sonate au Clair de Lune (Beethoven)", value: "Moonlight Sonata" },
+        { text: "Le Lac des cygnes (Tchaïkovski)", value: "Swan Lake" }
+      ],
+      correct: "Nocturne",
+      message: "Bravo ! C'est bien le Nocturne op. 9 n°2 de Chopin 🎉"
+    },
+    {
+      audio: "../audio/Alla Turca.mp3",
+      answers: [
+        { text: "Alla Turca (Mozart)", value: "Alla Turca" },
+        { text: "Gymnopédie n°1 (Satie)", value: "Gymnopedie" },
+        { text: "Prélude en do majeur (Bach)", value: "Prelude" }
+      ],
+      correct: "Alla Turca",
+      message: "Bravo ! C'est bien 'Alla Turca' de Mozart 🎉"
+    },
+    {
+      audio: "../audio/Für Elise.mp3",
+      answers: [
+        { text: "Für Elise (Beethoven)", value: "Fur Elise" },
+        { text: "Clair de Lune (Debussy)", value: "Clair de Lune" },
+        { text: "Nocturne op. 9 no. 2 (Chopin)", value: "Nocturne" }
+      ],
+      correct: "Fur Elise",
+      message: "Bravo ! C'est bien 'Für Elise' de Beethoven 🎉"
+    },
+    {
+      audio: "../audio/Arabesque No. 1.mp3",
+      answers: [
+        { text: "Arabesque n°1 (Debussy)", value: "Arabesque" },
+        { text: "Prélude en do majeur (Bach)", value: "Prelude" },
+        { text: "Gymnopédie n°1 (Satie)", value: "Gymnopedie" }
+      ],
+      correct: "Arabesque",
+      message: "Bravo ! C'est bien 'Arabesque n°1' de Debussy 🎉"
+    },
+    {
+      audio: "../audio/Etude Op. 10, no. 4 in C sharp minor - 'Torrent'.mp3",
+      answers: [
+        { text: "Étude 'Torrent' op.10 n°4 (Chopin)", value: "Torrent" },
+        { text: "Sonate au Clair de Lune (Beethoven)", value: "Moonlight Sonata" },
+        { text: "Alla Turca (Mozart)", value: "Alla Turca" }
+      ],
+      correct: "Torrent",
+      message: "Bravo ! C'est bien l'Étude 'Torrent' op.10 n°4 de Chopin 🎉"
+    }
+  ];
+
+  let currentMusic = 0;
+  let score = 0;
+
+  const audio = document.getElementById('music-audio');
+  const form = document.getElementById('guess-music-form');
+  const resultDiv = document.getElementById('guess-music-result');
+  const nextBtn = document.getElementById('next-music-btn');
+
+  function loadMusicQuiz(index) {
+    audio.style.display = '';
+    audio.querySelector('source').src = musicQuiz[index].audio;
+    audio.load();
+    form.innerHTML = '';
+    musicQuiz[index].answers.forEach(ans => {
+      const btn = document.createElement('button');
+      btn.type = "button";
+      btn.className = "guess-btn";
+      btn.dataset.answer = ans.value;
+      btn.textContent = ans.text;
+      form.appendChild(btn);
+    });
+    resultDiv.textContent = '';
+    resultDiv.style.color = '';
+    nextBtn.style.display = 'none';
+    nextBtn.textContent = (index < musicQuiz.length - 1) ? "Suivant" : "Voir le résultat";
+    Array.from(form.children).forEach(btn => btn.disabled = false);
+  }
+
+  function handleAnswer(e) {
+    if (!e.target.classList.contains('guess-btn')) return;
+    const answer = e.target.dataset.answer;
+    const correct = musicQuiz[currentMusic].correct;
+    Array.from(form.children).forEach(btn => btn.disabled = true);
+    if (answer === correct) {
+      resultDiv.textContent = musicQuiz[currentMusic].message;
+      resultDiv.style.color = "green";
+      score++;
+    } else {
+      resultDiv.textContent = "Mauvaise réponse. La bonne réponse était : " +
+        musicQuiz[currentMusic].answers.find(a => a.value === correct).text;
+      resultDiv.style.color = "red";
+    }
+    nextBtn.style.display = 'inline-block';
+    nextBtn.textContent = (currentMusic < musicQuiz.length - 1) ? "Suivant" : "Voir le résultat";
+  }
+
+  function showFinalResult() {
+    let msg = "";
+    if (score === musicQuiz.length) {
+      msg = `🎉 Parfait ! ${score} / ${musicQuiz.length} bonnes réponses. Tu es un(e) vrai(e) mélomane !`;
+    } else if (score >= musicQuiz.length - 1) {
+      msg = `👏 Presque parfait ! ${score} / ${musicQuiz.length} bonnes réponses.`;
+    } else if (score >= Math.floor(musicQuiz.length / 2)) {
+      msg = `Pas mal ! ${score} / ${musicQuiz.length} bonnes réponses. Continue à t'entraîner !`;
+    } else {
+      msg = `Tu as eu ${score} / ${musicQuiz.length}. Tu peux réessayer pour t'améliorer !`;
+    }
+    resultDiv.innerHTML = `<span style="color:#1a7f1a;font-weight:bold;">${msg}</span>`;
+    nextBtn.style.display = 'none';
+    form.innerHTML = '';
+    audio.style.display = 'none';
+  }
+
+  form.addEventListener('click', handleAnswer);
+
+  nextBtn.addEventListener('click', function() {
+    if (currentMusic < musicQuiz.length - 1) {
+      currentMusic++;
+      loadMusicQuiz(currentMusic);
+    } else {
+      showFinalResult();
+    }
+  });
+
+  loadMusicQuiz(currentMusic);
+});

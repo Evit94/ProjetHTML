@@ -562,6 +562,101 @@ footer{
     background: #444;
 }
 
+
+#guess-music-section {
+    margin: 40px auto;
+    max-width: 600px;
+    text-align: center;
+    background: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.08);
+    padding: 30px 20px 32px 20px;
+}
+
+#guess-music-form {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+}
+
+.guess-btn {
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 24px;
+    font-size: 0.98em; /* taille réduite */
+    margin: 4px 0;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, transform 0.15s;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    box-shadow: 0 2px 8px rgba(80,60,30,0.07);
+    text-transform: uppercase;
+}
+
+.guess-btn:hover:enabled {
+    background: #222;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+}
+
+.guess-btn:disabled {
+    background: #444;
+    color: #bbb;
+    cursor: not-allowed;
+}
+
+#next-music-btn {
+    margin-top: 24px;
+    background: #111;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.98em; /* taille réduite */
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Cinzel', serif;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+#next-music-btn:hover {
+    background: #222;
+    color: #fff;
+}
+
+#guess-music-result {
+    margin-top: 18px;
+    font-size: 1.1em;
+    min-height: 1.5em;
+}
+
+/* Responsive pour le jeu musique */
+@media (max-width: 700px) {
+    #guess-music-section {
+        max-width: 98vw;
+        padding: 18px 2vw 24px 2vw;
+    }
+    #music-audio {
+        width: 98%;
+        max-width: 98vw;
+    }
+    #guess-music-form {
+        flex-direction: column;
+        gap: 12px;
+    }
+    .guess-btn, #next-music-btn {
+        width: 100%;
+        font-size: 1em;
+        padding: 10px 0;
+    }
+}
+
 @media (max-width: 900px) {
     .header-decouvrir {
         flex-direction: column;

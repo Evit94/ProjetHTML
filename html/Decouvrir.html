@@ -66,8 +66,32 @@
             </div>
             <div class="quiz-decor decor-right"></div>
         </div>
+        <section class="site-presentation" id="guess-music-section">
+            <h2>Jeu : Devine le nom de la musique</h2>
+            <p>Écoute l'extrait et choisis le bon titre :</p>
+            <audio id="music-audio" controls>
+                <source src="../audio/Nocturne in E flat major, Op. 9 no. 2.mp3" type="audio/mpeg">
+                Votre navigateur ne supporte pas l’élément audio.
+            </audio>
+            <form id="guess-music-form">
+                <button type="button" class="guess-btn" data-answer="Nocturne">Nocturne op. 9 no. 2</button>
+                <button type="button" class="guess-btn" data-answer="Moonlight Sonata">Sonate au Clair de Lune (Beethoven)</button>
+                <button type="button" class="guess-btn" data-answer="Swan Lake">Le Lac des cygnes (Tchaïkovski)</button>
+            </form>
+            <div id="guess-music-result"></div>
+            <button id="next-music-btn" class="submit-btn" style="display:none;">Suivant</button>
+        </section>
     </main>
-    <footer>© 2025 Leyan et Eric</footer>
+    <footer>
+        <div class="footer-contact">
+            <div class="footer-contact-title">Contactez-nous :</div>
+            <ul class="footer-contact-list">
+                <li><span class="footer-icon">📧</span> <a href="mailto:eric.eung@efrei.net">eric.eung@efrei.net</a></li>
+                <li><span class="footer-icon">📧</span> <a href="mailto:leyan.very@efrei.net">leyan.very@efrei.net</a></li>
+            </ul>
+            <div class="footer-copyright">© 2025 Leyan et Eric</div>
+        </div>
+    </footer>
     <script src="../js/script.js"></script>
 </body>
 </html>
