@@ -204,3 +204,140 @@ if (document.getElementById('map')) {
 }
 
 document.addEventListener('DOMContentLoaded', setupQuiz);
+// --- Jeu de portée musicale ---
+const notesGame = [
+  {name: 'mi', pos: 8},      // ligne 1 (bas)
+  {name: 'fa', pos: 7},   // interligne 1
+  {name: 'sol', pos: 6},    // ligne 2
+  {name: 'la', pos: 5},   // interligne 2
+  {name: 'si', pos: 4},     // ligne 3
+  {name: 'do', pos: 3},   // interligne 3
+  {name: 'ré', pos: 2},     // ligne 4
+  {name: 'mi', pos: 1},   // interligne 4
+  {name: 'fa', pos: 0}      // ligne 5 (haut)
+];
+
+const noteButtons = [
+  {name: 'do'},
+  {name: 'ré'},
+  {name: 'mi'},
+  {name: 'fa'},
+  {name: 'sol'},
+  {name: 'la'},
+  {name: 'si'},
+];
+
+function drawStaff(ctx) {
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+  ctx.strokeStyle = '#222';
+  ctx.lineWidth = 2;
+  for (let i = 0; i < 5; i++) {
+    ctx.beginPath();
+    ctx.moveTo(20, 30 + i * 16);
+    ctx.lineTo(ctx.canvas.width - 20, 30 + i * 16);
+    ctx.stroke();
+  }
+  ctx.font = '48px serif';
+  ctx.fillText('𝄞', 28, 80);
+}
+
+function drawNote(ctx, noteIdx, measureIdx) {
+  const x0 = 80;
+  const measureWidth = 110;
+  const x = x0 + measureIdx * measureWidth;
+  const y = 30 + notesGame[noteIdx].pos * 8;
+  ctx.beginPath();
+  ctx.ellipse(x, y, 13, 8, 0, 0, 2 * Math.PI);
+  ctx.fillStyle = '#b6a07a';
+  ctx.fill();
+  ctx.strokeStyle = '#222';
+  ctx.stroke();
+}
+
+function drawMeasures(ctx) {
+  const x0 = 80;
+  const measureWidth = 110;
+  for (let i = 1; i < 4; i++) {
+    ctx.beginPath();
+    ctx.moveTo(x0 + i * measureWidth, 30);
+    ctx.lineTo(x0 + i * measureWidth, 30 + 4 * 16);
+    ctx.strokeStyle = '#888';
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  }
+}
+
+function setupMusicGame() {
+  const staff = document.getElementById('music-staff');
+  const btnsDiv = document.getElementById('note-buttons');
+  const playBtn = document.getElementById('play-music-game');
+  const msgDiv = document.getElementById('music-game-message');
+  if (!staff || !btnsDiv || !playBtn) return;
+  const ctx = staff.getContext('2d');
+  drawStaff(ctx);
+  drawMeasures(ctx);
+  btnsDiv.innerHTML = '';
+  noteButtons.forEach((n) => {
+    const btn = document.createElement('button');
+    btn.textContent = n.name.toUpperCase();
+    btn.className = 'submit-btn';
+    btn.style.margin = '0 6px 8px 6px';
+    btn.disabled = true;
+    btn.onclick = () => checkMusicNote(n.name);
+    btnsDiv.appendChild(btn);
+  });
+  let sequence = [];
+  let current = 0;
+  let playing = false;
+  function startGame() {
+    sequence = [];
+    for (let i = 0; i < 4; i++) {
+      sequence.push(Math.floor(Math.random() * notesGame.length));
+    }
+    current = 0;
+    playing = true;
+    drawStaff(ctx);
+    drawMeasures(ctx);
+    btnsDiv.querySelectorAll('button').forEach(b => b.disabled = true);
+    msgDiv.textContent = 'Clique sur la bonne note !';
+    showNextNote();
+  }
+  function showNextNote() {
+    drawStaff(ctx);
+    drawMeasures(ctx);
+    for (let i = 0; i < current; i++) {
+      drawNote(ctx, sequence[i], i);
+    }
+    if (current < 4) {
+      drawNote(ctx, sequence[current], current);
+      const noteName = notesGame[sequence[current]].name;
+      btnsDiv.querySelectorAll('button').forEach((b) => b.disabled = b.textContent.toLowerCase() !== noteName);
+    } else {
+      btnsDiv.querySelectorAll('button').forEach(b => b.disabled = true);
+      msgDiv.textContent = 'Bravo ! Tu as trouvé toutes les notes !';
+      playing = false;
+    }
+  }
+  function checkMusicNote(name) {
+    if (!playing) return;
+    const expected = notesGame[sequence[current]].name;
+    if (name === expected) {
+      current++;
+      if (current < 4) {
+        msgDiv.textContent = 'Bien joué ! Passe à la suivante.';
+        setTimeout(() => {
+          msgDiv.textContent = 'Clique sur la bonne note !';
+          showNextNote();
+        }, 700);
+      } else {
+        showNextNote();
+      }
+    } else {
+      msgDiv.textContent = "Ce n'est pas la bonne note";
+    }
+  }
+  playBtn.onclick = () => {
+    startGame();
+  };
+}
+document.addEventListener('DOMContentLoaded', setupMusicGame);
