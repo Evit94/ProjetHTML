@@ -3,7 +3,7 @@ h1 {
     padding: 10px;  
     text-align:center;
     font-size: 30px;
-    color:#ffffff;
+    color: white;
     margin-top: -10px;
 }
 
@@ -49,7 +49,6 @@ h1 {
 }
 
 body {
-    
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -70,7 +69,7 @@ body {
     left: 50%;
     transform: translateX(-50%);
     font-size: 30px;
-    color: #111;
+    color: black;
     margin: 0;
     white-space: nowrap;
     pointer-events: none;
@@ -80,7 +79,7 @@ body {
 }
 
 body.accueil .titre {
-    color: #fff;
+    color: white;
 }
 
 * {
@@ -302,7 +301,7 @@ footer{
 
 .form-checkbox a {
     text-decoration: underline;
-    color: #000;
+    color: black;
 }
 
 .submit-btn {
@@ -435,6 +434,7 @@ footer{
     overflow: hidden;
     filter: brightness(0.95);
 }
+
 .decor-left {
     margin-right: 32px;
     background: url('../images/Steinway_Onstage_at_Bass_Concert_Hall.jpg') center/cover no-repeat, linear-gradient(135deg, #e0d6c3 40%, #b6a07a 100%);
@@ -442,6 +442,7 @@ footer{
     border-top-left-radius: 80px 200px;
     border-bottom-left-radius: 80px 200px;
 }
+
 .decor-right {
     margin-left: 32px;
     background: url('../images/kawai-piano.jpg') center/cover no-repeat, linear-gradient(135deg, #e0d6c3 40%, #b6a07a 100%);
@@ -449,6 +450,7 @@ footer{
     border-top-right-radius: 80px 200px;
     border-bottom-right-radius: 80px 200px;
 }
+
 .quiz-decor::after {
     content: "\266B  \266A  \266C  \2669";
     position: absolute;
@@ -465,6 +467,7 @@ footer{
     text-shadow: 0 2px 8px rgba(0,0,0,0.08);
     z-index: 2;
 }
+
 .quiz-section {
     display: flex;
     flex-direction: row;
@@ -506,7 +509,7 @@ footer{
     margin-top: 18px;
     padding: 8px 24px;
     background: #222;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 4px;
     font-size: 1rem;
@@ -554,7 +557,7 @@ footer{
     border: 1px solid #aaa;
     border-left: none;
     background: #222;
-    color: #fff;
+    color: white;
     border-radius: 0 6px 6px 0;
     cursor: pointer;
 }
@@ -583,8 +586,8 @@ footer{
 }
 
 .guess-btn {
-    background: #111;
-    color: #fff;
+    background: black;
+    color: white;
     border: none;
     border-radius: 6px;
     padding: 10px 24px;
@@ -600,7 +603,7 @@ footer{
 
 .guess-btn:hover:enabled {
     background: #222;
-    color: #fff;
+    color: white;
     transform: translateY(-2px) scale(1.03);
 }
 
@@ -613,7 +616,7 @@ footer{
 #next-music-btn {
     margin-top: 24px;
     background: #111;
-    color: #fff;
+    color: white;
     border: none;
     border-radius: 6px;
     font-size: 0.98em; 
@@ -627,13 +630,64 @@ footer{
 
 #next-music-btn:hover {
     background: #222;
-    color: #fff;
+    color: white;
 }
 
 #guess-music-result {
     margin-top: 18px;
     font-size: 1.1em;
     min-height: 1.5em;
+}
+
+.discover-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+.discover-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 28px 24px;
+    min-width: 260px;
+    max-width: 340px;
+    text-align: center;
+}
+.discover-card-title {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-bottom: 16px;
+}
+#quiz-section, #music-game-section, #guess-music-section {
+    display: none;
+}
+#music-game-section {
+    margin-top: 40px;
+    text-align: center;
+}
+#back-to-cards-quiz, #back-to-cards-musicgame, #back-to-cards-ear {
+    margin-bottom: 18px;
+}
+.music-staff-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 18px;
+}
+.note-buttons {
+    margin-bottom: 18px;
+}
+#play-music-game {
+    margin-bottom: 10px;
+}
+.music-game-message {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+#next-music-btn {
+    display: none;
 }
 
 
@@ -686,7 +740,7 @@ footer{
 }
 
 .footer-contact {
-    background: #fff;
+    background: white;
     padding: 32px 0 18px 0;
     text-align: center;
     border-top: 1px solid #e0e0e0;

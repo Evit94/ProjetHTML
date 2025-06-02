@@ -45,42 +45,56 @@
         <div class="quiz-section">
             <div class="quiz-decor decor-left"></div>
             <div class="quiz-main-content">
-                <section class="site-presentation quiz-margin-top">
+                <div id="discover-cards-container" class="discover-cards-container">
+                    <div class="discover-card" id="card-quiz">
+                        <div class="discover-card-title">Veux-tu tester tes connaissances en piano ?</div>
+                        <button class="submit-btn" id="show-quiz-btn">Jouer</button>
+                    </div>
+                    <div class="discover-card" id="card-musicgame">
+                        <div class="discover-card-title">Veux-tu tester ta capacité de lecture en musique ?</div>
+                        <button class="submit-btn" id="show-musicgame-btn">Jouer</button>
+                    </div>
+                    <div class="discover-card" id="card-ear">
+                        <div class="discover-card-title">Veux-tu tester ton oreille ?</div>
+                        <button class="submit-btn" id="show-eargame-btn">Jouer</button>
+                    </div>
+                </div>
+                <section class="site-presentation quiz-margin-top" id="quiz-section" style="display:none;">
+                    <button class="submit-btn" id="back-to-cards-quiz">Retour</button>
                     <h2>Quiz : Piano & Compositeurs Classiques</h2>
                     <p>Testez vos connaissances sur le piano et les grands compositeurs classiques ! 20 questions, score final à la fin. Bonne chance !</p>
-                </section>
-                <section id="quiz-section" class="site-presentation quiz-margin-bottom">
-                    <form id="quiz-form">
-                    </form>
+                    <form id="quiz-form"></form>
                     <div id="quiz-result"></div>
                 </section>
-                <section class="site-presentation" id="music-game-section" style="margin-top: 40px; text-align:center;">
+                <section class="site-presentation" id="music-game-section" style="display:none;">
+                    <button class="submit-btn" id="back-to-cards-musicgame">Retour</button>
                     <h2>Jeu : Trouve la note sur la portée</h2>
-                    <div id="music-staff-container" style="display: flex; justify-content: center; align-items: flex-start; margin-bottom: 18px;">
-                        <canvas id="music-staff" width="600" height="120" style="background:transparent;"></canvas>
+                    <div id="music-staff-container" class="music-staff-container">
+                        <canvas id="music-staff" width="600" height="120"></canvas>
                     </div>
-                    <div id="note-buttons" style="margin-bottom: 18px;"></div>
-                    <button id="play-music-game" class="submit-btn" style="margin-bottom: 10px;">Jouer</button>
-                    <div id="music-game-message" style="margin-top: 10px; font-size:1.1em;"></div>
+                    <div id="note-buttons" class="note-buttons"></div>
+                    <button id="play-music-game" class="submit-btn">Jouer</button>
+                    <div id="music-game-message" class="music-game-message"></div>
+                </section>
+                <section class="site-presentation" id="guess-music-section" style="display:none;">
+                    <button class="submit-btn" id="back-to-cards-ear">Retour</button>
+                    <h2>Jeu : Devine le nom de la musique</h2>
+                    <p>Écoute l'extrait et choisis le bon titre :</p>
+                    <audio id="music-audio" controls>
+                        <source src="../audio/Nocturne in E flat major, Op. 9 no. 2.mp3" type="audio/mpeg">
+                        Votre navigateur ne supporte pas l’élément audio.
+                    </audio>
+                    <form id="guess-music-form">
+                        <button type="button" class="guess-btn" data-answer="Nocturne">Nocturne op. 9 no. 2</button>
+                        <button type="button" class="guess-btn" data-answer="Moonlight Sonata">Sonate au Clair de Lune (Beethoven)</button>
+                        <button type="button" class="guess-btn" data-answer="Swan Lake">Le Lac des cygnes (Tchaïkovski)</button>
+                    </form>
+                    <div id="guess-music-result"></div>
+                    <button id="next-music-btn" class="submit-btn" style="display:none;">Suivant</button>
                 </section>
             </div>
             <div class="quiz-decor decor-right"></div>
         </div>
-        <section class="site-presentation" id="guess-music-section">
-            <h2>Jeu : Devine le nom de la musique</h2>
-            <p>Écoute l'extrait et choisis le bon titre :</p>
-            <audio id="music-audio" controls>
-                <source src="../audio/Nocturne in E flat major, Op. 9 no. 2.mp3" type="audio/mpeg">
-                Votre navigateur ne supporte pas l’élément audio.
-            </audio>
-            <form id="guess-music-form">
-                <button type="button" class="guess-btn" data-answer="Nocturne">Nocturne op. 9 no. 2</button>
-                <button type="button" class="guess-btn" data-answer="Moonlight Sonata">Sonate au Clair de Lune (Beethoven)</button>
-                <button type="button" class="guess-btn" data-answer="Swan Lake">Le Lac des cygnes (Tchaïkovski)</button>
-            </form>
-            <div id="guess-music-result"></div>
-            <button id="next-music-btn" class="submit-btn" style="display:none;">Suivant</button>
-        </section>
     </main>
     <footer>
         <div class="footer-contact">
@@ -92,6 +106,7 @@
             <div class="footer-copyright">© 2025 Leyan et Eric</div>
         </div>
     </footer>
+    <script src="../js/decouvrir.js"></script>
     <script src="../js/script.js"></script>
 </body>
 </html>
