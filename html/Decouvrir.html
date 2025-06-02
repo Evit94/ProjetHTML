@@ -11,7 +11,7 @@
     <header>
         <div class="bandeau">
             <div class="navbar">
-                <button class="menu" id="openSidebar" aria-label="Ouvrir le menu">
+                <button class="menu" id="ouvrirMenu" aria-label="Ouvrir le menu">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -27,16 +27,16 @@
                 </div>
             </div>
         </div>
-        <nav id="sidebarMenu" class="sidebar">
-            <button id="closeSidebar" class="close-btn" aria-label="Fermer le menu">&times;</button>
+        <nav id="menubarre" class="barre">
+            <button id="closeSidebar" class="fermer-btn" aria-label="Fermer le menu">&times;</button>
             <div class="sidebar-section-title">NAVIGATION</div>
             <ul class="sidebar-list">
                 <li><a href="Accueil.html">Accueil</a></li>
-                <hr class="sidebar-separator">
+                <hr class="separer-sidebarre">
                 <li><a href="Decouvrir.html">Découvrir</a></li>
-                <hr class="sidebar-separator">
+                <hr class="separer-sidebarre">
                 <li><a href="localisation.html">Localisation</a></li>
-                <hr class="sidebar-separator">
+                <hr class="separer-sidebarre">
                 <li class="sidebar-bottom"><a href="Contact.html">Contact</a></li>
             </ul>
         </nav>
@@ -44,40 +44,40 @@
     <main>
         <div class="quiz-section">
             <div class="quiz-decor decor-left"></div>
-            <div class="quiz-main-content">
-                <div id="discover-cards-container" class="discover-cards-container">
-                    <div class="discover-card" id="card-quiz">
-                        <div class="discover-card-title">Veux-tu tester tes connaissances en piano ?</div>
-                        <button class="submit-btn" id="show-quiz-btn">Jouer</button>
+            <div class="quiz-contenu">
+                <div id="decouvrirjeux" class="decouvrirjeux">
+                    <div class="afficherencadre" id="quizEncadre">
+                        <div class="afficherencadre-title">Veux-tu tester tes connaissances en piano ?</div>
+                        <button class="submit-btn" id="afficherquiz-btn">Jouer</button>
                     </div>
-                    <div class="discover-card" id="card-musicgame">
-                        <div class="discover-card-title">Veux-tu tester ta capacité de lecture en musique ?</div>
-                        <button class="submit-btn" id="show-musicgame-btn">Jouer</button>
+                    <div class="afficherencadre" id="jeuMusic">
+                        <div class="afficherencadre-title">Veux-tu tester ta capacité de lecture en musique ?</div>
+                        <button class="submit-btn" id="afficherPartition-btn">Jouer</button>
                     </div>
-                    <div class="discover-card" id="card-ear">
-                        <div class="discover-card-title">Veux-tu tester ton oreille ?</div>
-                        <button class="submit-btn" id="show-eargame-btn">Jouer</button>
+                    <div class="afficherencadre" id="jeuEcoute">
+                        <div class="afficherencadre-title">Veux-tu tester ton oreille ?</div>
+                        <button class="submit-btn" id="afficherEcoute-btn">Jouer</button>
                     </div>
                 </div>
                 <section class="site-presentation quiz-margin-top" id="quiz-section" style="display:none;">
-                    <button class="submit-btn" id="back-to-cards-quiz">Retour</button>
+                    <button class="submit-btn" id="retour-carte-quiz">Retour</button>
                     <h2>Quiz : Piano & Compositeurs Classiques</h2>
                     <p>Testez vos connaissances sur le piano et les grands compositeurs classiques ! 20 questions, score final à la fin. Bonne chance !</p>
                     <form id="quiz-form"></form>
                     <div id="quiz-result"></div>
                 </section>
-                <section class="site-presentation" id="music-game-section" style="display:none;">
-                    <button class="submit-btn" id="back-to-cards-musicgame">Retour</button>
+                <section class="site-presentation" id="PartieJeuMusique" style="display:none;">
+                    <button class="submit-btn" id="retour-carte-music">Retour</button>
                     <h2>Jeu : Trouve la note sur la portée</h2>
-                    <div id="music-staff-container" class="music-staff-container">
-                        <canvas id="music-staff" width="600" height="120"></canvas>
+                    <div id="contenuMusique" class="contenuMusique">
+                        <canvas id="musiqueCanvas" width="600" height="120"></canvas>
                     </div>
                     <div id="note-buttons" class="note-buttons"></div>
                     <button id="play-music-game" class="submit-btn">Jouer</button>
                     <div id="music-game-message" class="music-game-message"></div>
                 </section>
                 <section class="site-presentation" id="guess-music-section" style="display:none;">
-                    <button class="submit-btn" id="back-to-cards-ear">Retour</button>
+                    <button class="submit-btn" id="retour-carte-ecoute">Retour</button>
                     <h2>Jeu : Devine le nom de la musique</h2>
                     <p>Écoute l'extrait et choisis le bon titre :</p>
                     <audio id="music-audio" controls>

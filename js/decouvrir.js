@@ -134,7 +134,7 @@ function drawMesures(ctx) {
 }
 
 function setupMusicGame() {
-    const cle = document.getElementById('music-staff');
+    const cle = document.getElementById('musiqueCanvas');
     const btnsDiv = document.getElementById('note-buttons');
     const playBtn = document.getElementById('play-music-game');
     const msgDiv = document.getElementById('music-game-message');
@@ -344,31 +344,31 @@ document.addEventListener('DOMContentLoaded', setupMusicGame);
 
 document.addEventListener('DOMContentLoaded', function() {
     const quizSection = document.getElementById('quiz-section');
-    const musicGameSection = document.getElementById('music-game-section');
+    const musicGameSection = document.getElementById('PartieJeuMusique');
     const guessMusicSection = document.getElementById('guess-music-section');
-    const cards = document.getElementById('discover-cards-container');
-    document.getElementById('show-quiz-btn').onclick = function() {
+    const cards = document.getElementById('decouvrirjeux');
+    document.getElementById('afficherquiz-btn').onclick = function() {
         cards.style.display = 'none';
         quizSection.style.display = 'block';
     };
-    document.getElementById('show-musicgame-btn').onclick = function() {
+    document.getElementById('afficherPartition-btn').onclick = function() {
         cards.style.display = 'none';
         musicGameSection.style.display = 'block';
         if (typeof setupMusicGame === 'function') setupMusicGame();
     };
-    document.getElementById('show-eargame-btn').onclick = function() {
+    document.getElementById('afficherEcoute-btn').onclick = function() {
         cards.style.display = 'none';
         guessMusicSection.style.display = 'block';
     };
-    document.getElementById('back-to-cards-quiz').onclick = function() {
+    document.getElementById('retour-carte-quiz').onclick = function() {
         quizSection.style.display = 'none';
         cards.style.display = 'flex';
     };
-    document.getElementById('back-to-cards-musicgame').onclick = function() {
+    document.getElementById('retour-carte-music').onclick = function() {
         musicGameSection.style.display = 'none';
         cards.style.display = 'flex';
     };
-    document.getElementById('back-to-cards-ear').onclick = function() {
+    document.getElementById('retour-carte-ecoute').onclick = function() {
         guessMusicSection.style.display = 'none';
         cards.style.display = 'flex';
     };

@@ -54,7 +54,7 @@ body {
     height: 100vh;
     margin: 5px;
 }
-#video-background {
+#video-en-font {
     position: fixed;
     top: 0;
     left: 0;
@@ -161,7 +161,7 @@ main.content {
 }
 
 
-.sidebar {
+.barre {
     position: fixed;
     top: 0;
     left: -100%; 
@@ -178,10 +178,10 @@ main.content {
     display: flex;
     flex-direction: column;
 }
-.sidebar.active {
+.barre.active {
     left: 0;
 }
-.sidebar .close-btn {
+.barre .fermer-btn {
     position: absolute;
     top: 10px;
     right: 15px;
@@ -191,7 +191,7 @@ main.content {
     font-size: 2rem;
     cursor: pointer;
 }
-.sidebar ul {
+.barre ul {
     list-style: none;
     padding: 0;
     margin: 40px 0 0 0;
@@ -202,7 +202,7 @@ main.content {
     min-height: 0;
     flex: 1;
 }
-.sidebar ul li a {
+.barre ul li a {
     display: block;
     padding: 10px 20px;
     color: white;
@@ -215,7 +215,7 @@ main.content {
     margin-left: 4px;
     margin-right: 4px;
 }
-.sidebar ul .sidebar-bottom {
+.barre ul .sidebar-bottom {
     margin-top: auto;
     margin-bottom: 48px;
 }
@@ -238,7 +238,7 @@ main.content {
     margin: 0;
     padding: 0;
 }
-.sidebar-separator {
+.separer-sidebarre {
     border: none;
     border-top: 1px solid #444;
     margin: 0 0 0 0;
@@ -482,7 +482,7 @@ footer{
     box-shadow: 0 8px 32px rgba(80,60,30,0.07), 0 1.5px 0 #b6a07a1a inset;
     padding: 32px 0;
 }
-.quiz-main-content {
+.quiz-contenu {
     flex: 1;
     max-width: 700px;
     z-index: 2;
@@ -639,14 +639,14 @@ footer{
     min-height: 1.5em;
 }
 
-.discover-cards-container {
+.decouvrirjeux {
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
     justify-content: center;
     margin-bottom: 40px;
 }
-.discover-card {
+.afficherencadre {
     background: white;
     border-radius: 12px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
@@ -655,22 +655,22 @@ footer{
     max-width: 340px;
     text-align: center;
 }
-.discover-card-title {
+.afficherencadre-title {
     font-weight: bold;
     font-size: 1.2em;
     margin-bottom: 16px;
 }
-#quiz-section, #music-game-section, #guess-music-section {
+#quiz-section, #PartieJeuMusique, #guess-music-section {
     display: none;
 }
-#music-game-section {
+#PartieJeuMusique {
     margin-top: 40px;
     text-align: center;
 }
-#back-to-cards-quiz, #back-to-cards-musicgame, #back-to-cards-ear {
+#retour-carte-quiz, #retour-carte-music, #retour-carte-ecoute {
     margin-bottom: 18px;
 }
-.music-staff-container {
+.contenuMusique {
     display: flex;
     justify-content: center;
     align-items: flex-start;
